@@ -1,0 +1,103 @@
+<!--pages/my/my.wxml-->
+<view class='avatar'>
+  <image src='/assets/icons/lion-large.png'></image>
+  <text wx:if="{{!login}}" bindtap='goReg'>登录></text>
+  <text wx:else>18612871995</text>
+</view>
+<view class='divider'></view>
+<view class='cell' wx:if='{{!login}}'>
+  <view class='order cell-item' bindtap='goReg'>
+    <text>我的订单</text>
+    <text class='arrow'>查看全部订单</text>
+  </view>
+  <view class='status'>
+    <view class='fukuan' bindtap='goReg'>
+      <image src='/assets/icons/fukuan-fill.png'></image>
+      <text>待付款</text>
+    </view>
+    <view class='shouhuo' bindtap='goReg'>
+      <image src='/assets/icons/shouhuo-fill.png'></image>
+      <text>待收货</text>
+    </view>
+    <view class='pingjia' bindtap='goReg'>
+      <image src='/assets/icons/pingjia.png'></image>
+      <text>待评价</text>
+    </view>
+    <view class='shouhou' bindtap='goReg'>
+      <image src='/assets/icons/tuihuo-fill.png'></image>
+      <text>退款/售后</text>
+    </view>
+  </view>
+</view>
+<view class='cell' wx:else>
+  <view class='order cell-item' bindtap='goallorder' data-tableIndex='{{0}}'>
+    <text>我的订单</text>
+    <text class='arrow'>查看全部订单</text>
+  </view>
+  <view class='status'>
+    <view class='fukuan' bindtap='goallorder' data-tableIndex='{{1}}'>
+      <image src='/assets/icons/fukuan-fill.png'></image>
+      <text>待付款</text>
+    </view>
+    <view class='shouhuo' bindtap='goallorder' data-tableIndex='{{2}}'>
+      <image src='/assets/icons/shouhuo-fill.png'></image>
+      <text>待收货</text>
+    </view>
+    <view class='pingjia' bindtap='goallorder' data-tableIndex='{{3}}'>
+      <image src='/assets/icons/pingjia.png'></image>
+      <text>待评价</text>
+    </view>
+    <view class='shouhou' bindtap='goallorder' data-tableIndex='{{4}}'>
+      <image src='/assets/icons/tuihuo-fill.png'></image>
+      <text>退款/售后</text>
+    </view>
+  </view>
+</view>
+<view class='divider'></view>
+<view class='cell my-detail' wx:if='{{!login}}'>
+  <view class='cell-item arrow' bindtap='goReg'>
+    <view>
+      <image src='/assets/icons/position-small.png'></image>
+      <text>收货地址</text>
+    </view>
+  </view>
+  <view class='cell-item arrow' bindtap='goKefu'>
+    <view>
+      <image src='/assets/icons/kefu-small.png'></image>
+      <text>客服/反馈</text>
+    </view>
+  </view>
+  <view class='cell-item arrow' bindtap='goReg'>
+    <view>
+      <image src='/assets/icons/youhui-small.png'></image>
+      <text>我的优惠券</text>
+    </view>
+  </view>
+</view>
+<view class='cell my-detail' wx:else>
+  <view class='cell-item arrow' bindtap='goaddress'>
+    <view>
+      <image src='/assets/icons/position-small.png'></image>
+      <text>收货地址</text>
+    </view>
+  </view>
+  <view class='cell-item arrow' bindtap='goKefu'>
+    <view>
+      <image src='/assets/icons/kefu-small.png'></image>
+      <text>客服/反馈</text>
+    </view>
+  </view>
+  <view class='cell-item arrow' bindtap='goyouhui'>
+    <view>
+      <image src='/assets/icons/youhui-small.png'></image>
+      <text>我的优惠券</text>
+    </view>
+  </view>
+</view>
+<view class='quit' wx:if='{{login}}'>
+  <view class='divider'></view>
+  <view>
+    <button bindtap='quitlogin'>退出登录</button>
+  </view>
+</view>
+<view class='bkg' wx:if='{{!login}}'></view>

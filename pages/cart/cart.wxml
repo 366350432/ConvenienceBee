@@ -1,0 +1,167 @@
+<!--pages/cart/cart.wxml
+<view class='cart-top-none' wx:if='{{add}}'>
+  <view class='cart-none'>
+  <image src='/assets/icons/cart-detail.png'></image>
+  </view>
+  <view class='none'>
+    <text>购物车是空的耶，去逛逛吧~</text>
+  </view>
+  <view class='gogo' bindtap='goHome'>
+    <text>去逛逛</text>
+  </view>
+</view>
+<view class='cart-add' wx:else>
+  <view class='divider'></view>
+  <view class='getPosition arrow' bindtap='goReg'>
+    <text>先锋侠需要您的精确坐标</text>
+  </view>
+  <view class='divider'></view>
+  <view class='cart-detail'>
+    <view class='cell-item arrow'>
+      <text>收货时间</text>
+      <picker bindchange="bindCasPickerChange" value="{{casIndex1}}" range="{{casArray}}">
+      <view>
+       <text>{{casArray[casIndex]}}</text>
+      </view>
+     </picker>
+    </view>
+    <view>
+     <view class="main">
+    <view wx:if="{{hasList}}">
+        <view class="cart-box">
+            <view class="cart-list" wx:for="{{carts}}" wx:key="{{index}}">
+                <icon wx:if="{{item.selected}}" type="success" color="#FCAD00" data-index="{{index}}"  class="cart-pro-select" bindtap="selectList"/>
+                <icon wx:else type="circle" class="cart-pro-select" data-index="{{index}}" bindtap="selectList"/>
+                <navigator url="../details/details?id={{item.id}}"><image class="cart-thumb" src="{{item.image}}"></image></navigator>
+                <text class="cart-pro-name">{{item.title}}</text>
+                <image src='/assets/icons/shanchu.png' class='shanchu'  bindtap="deleteList" data-index="{{index}}"></image>
+                <view class="cart-count-box">
+                <text class="cart-pro-price">￥{{item.price}}</text>
+                    <!--<text class="cart-count-down" bindtap="minusCount" data-obj="{{obj}}" data-index="{{index}}">-</text>
+                    <text class="cart-count-num">{{item.num}}</text>
+                    <text class="cart-count-add" bindtap="addCount" data-index="{{index}}">+</text>-->
+                <!--<view>
+                  <image src='/assets/icons/delete-fill.png' bindtap="minusCount" data-obj="{{obj}}" data-index="{{index}}"></image>
+                    <text class="cart-count-num">{{item.num}}</text>
+                  <image src='/assets/icons/add1-fill.png' bindtap="addCount" data-index="{{index}}"></image>
+                </view>
+                </view>
+                <text class="cart-del" bindtap="deleteList" data-index="{{index}}">×</text>
+            </view>
+        </view>
+        <view class="cart-footer">
+            <icon wx:if="{{selectAllStatus}}" type="success" color="#FCAD00" class="total-select" bindtap="selectAll"/>
+            <icon wx:else type="circle" color="#f1f1f1" class="total-select" bindtap="selectAll"/>
+            <!--<view class="order-icon">
+                <navigator url="../orders/orders"></navigator>
+            </view>-->
+           <!-- <text class='select-all'>全选</text>
+            <text class="cart-toatl-price">￥{{totalPrice}}</text>          
+            <text class='cart-ok' wx:if='{{selectAllStatus}}'>选好了</text>
+            <text class='cart-false' wx:else>满￥0起送</text>
+        </view>
+    </view>
+    
+</view>
+    </view>
+  </view>
+</view>-->
+<view class='cart-top-none' wx:if='{{!add}}'>
+  <view class='cart-none'>
+  <image src='/assets/icons/cart-detail.png'></image>
+  </view>
+  <view class='none'>
+    <text>购物车是空的耶，去逛逛吧~</text>
+  </view>
+  <view class='gogo' bindtap='goHome'>
+    <text>去逛逛</text>
+  </view>
+</view>
+<scroll-view style='height:100vh;overflow:scroll' wx:else>
+  <view class='getPosition arrow' bindtap='goReg'>
+    <text>需要您的精确坐标</text>
+  </view>
+  <view class='divider'></view>
+  <view class='cart-detail'>
+    <view class='cell-item arrow'>
+      <text>收货时间</text>
+      <picker bindchange="bindCasPickerChange" value="{{casIndex1}}" range="{{casArray}}">
+      <view>
+       <text>{{casArray[casIndex]}}</text>
+      </view>
+     </picker>
+    </view>
+  </view>
+  <view class='top' style='height:8vh'>
+   <view class='label' bindtap='totalFun'>
+    <image wx:if="{{total}}" src='/assets/icons/choice_y.png'></image>
+    <image wx:else src='/assets/icons/choice_n.png'></image>
+   </view>
+   <text class='city'>北京</text>
+   <text wx:if="{{!isEdit}}" class='edit-btn' bindtap='editFun'>编辑</text>
+   <text wx:else class='edit-btn' bindtap='editFun'>完成</text>
+  </view>
+  <scroll-view scroll-y class='list' style='height:65vh'>
+    <view class='item' wx:if="{{!isEdit}}" wx:for="{{list}}" wx:key="id">
+      <view class='label' bindtap="labelFun" data-id="{{item.id}}">
+        <image wx:if="{{item.select}}" src='/assets/icons/choice_y.png'></image>
+        <image wx:else src='/assets/icons/choice_n.png'></image>
+      </view>
+      <navigator class='content' hover-class="none" url="/pages/details/details?id={{item.id}}">
+        <image src='{{item.img_url}}'></image>
+        <view class='text'>
+          <view class='title'>{{item.title}}</view>
+          <view class='spec'>{{item.spec}}</view>
+          <view class='price'>
+            <text>¥{{item.new_price}}</text>
+            <text>x{{item.num}}</text>
+          </view>
+        </view>
+      </navigator>
+    </view>
+    <view class='item edit' wx:if="{{isEdit}}"  wx:for="{{list}}" wx:key="id">
+      <view class='label' bindtap="labelFun" data-id="{{item.id}}">
+        <image wx:if="{{item.select}}" src='/assets/icons/choice_y.png'></image>
+        <image wx:else src='/assets/icons/choice_n.png'></image>
+      </view>
+      <view class='content'>
+        <image src='{{item.img_url}}'></image>
+        <view class='text'>
+          <view class='title'>
+            <text class='{{item.num==1?"prohibit":""}}' bindtap='reduceFun' data-item="{{item}}" >-</text>
+            <input type="number" value='{{item.num}}'></input>
+            <text bindtap='plusFun' data-item="{{item}}">+</text>
+          </view>
+          <view class='spec'>{{item.spec}}</view>
+          <view class='price'>
+            <text>¥{{item.new_price}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='del-btn' bindtap='delItemFun' data-item="{{item}}">
+        删除
+      </view>
+    </view>
+  </scroll-view>
+  <view class='bottom' style='height:10vh'>
+    <view class='left'>
+      <view class='text'>
+        <view class='label' style='padding-left:16px;' bindtap='totalFun'>
+          <image wx:if="{{total}}" src='/assets/icons/choice_y.png'></image>
+          <image wx:else src='/assets/icons/choice_n.png'></image>
+        </view>
+        <text style='padding-left:10px;'>全选</text>
+      </view>
+      <view class='total-price' wx:if="{{!isEdit}}">
+        合计:<text style='color:#ff5f19;margin-right:10px;'>￥{{totalPrice}}</text>
+        <view style='font-size: 10px;margin-right:10px;'>不含运费</view>
+      </view>
+    </view>
+    <view class='{{totalPrice>0.1?"right":"right prohibit"}}'  wx:if="{{!isEdit}}">
+      结算
+    </view>
+    <view  class='{{totalPrice>0.1?"right":"right prohibit"}}' bindtap="delFun" wx:if="{{isEdit}}">
+      删除
+    </view>
+  </view>
+</scroll-view>

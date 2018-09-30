@@ -1,0 +1,24 @@
+<!--pages/address/address.wxml-->
+<view class='divider'></view>
+<view class='address-out'>
+  <view class='address' wx:for="{{address}}" wx:key='id'>
+    <view class='address-list'>
+      <view>
+        <text>{{item.person}}</text>
+        <text>{{item.tel}}</text>
+      </view>
+      <view>
+        <text>{{item.area}}</text>
+        <text>{{item.detail}}</text>
+      </view>    
+    </view>
+    <view class='update' bindtap='goaddressUpdate' data-person='{{item.person}}' data-tel='{{item.tel}}' data-area='{{item.area}}' data-detail='{{item.detail}}'>
+      <image src='/assets/icons/update.png'></image>
+    </view>
+  </view> 
+</view>
+<view class='address-add'>
+  <view>
+    <button bindtap='goaddressAdd'>新增地址</button>
+  </view>
+</view>

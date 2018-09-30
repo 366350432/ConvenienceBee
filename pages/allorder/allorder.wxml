@@ -1,0 +1,43 @@
+<view class='main'>
+  <view class='tab'>
+    <loading hidden='{{isHidden}}'>
+      加载中
+    </loading>
+    <view bindtap='tabFun' data-index="{{0}}">
+      <text class='{{tabIndex==0?"active":""}}'>全部订单</text>
+    </view>
+    <view bindtap='tabFun' data-index="{{1}}">
+      <text class='{{tabIndex==1?"active":""}}'>待付款</text>
+    </view>
+    <view bindtap='tabFun' data-index="2">
+      <text class='{{tabIndex==2?"active":""}}'>待收货</text>
+    </view>
+    <view bindtap='tabFun' data-index="3">
+      <text class='{{tabIndex==3?"active":""}}'>待评价</text>
+    </view>
+    <view bindtap='tabFun' data-index="4">
+      <text class='{{tabIndex==4?"active":""}}'>退款/售后</text>
+    </view>
+  </view>
+  <!-- <scroll-view scroll-y class='list'>
+      <view class='item' wx:if="{{!isEdit}}" wx:for="{{list}}">
+      <navigator class='content' hover-class="none" url="/pages/details/index?id=1">
+        <image src='{{item.img}}'></image>
+        <view class='text'>
+          <view class='title'>{{item.name}}</view>
+          <view class='spec'>{{item.spec}}</view>
+          <view class='price'>
+            <text>¥{{item.price}}</text>
+            <text>x{{item.num}}</text>
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </scroll-view> -->
+  <view class='none-order'>
+    <image src='/assets/icons/order.png'></image>   
+  </view>
+  <view class='none-text'>
+    <text>您还没有相关订单哦~</text>
+  </view>
+</view>

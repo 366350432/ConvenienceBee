@@ -1,0 +1,107 @@
+<view style='height:100vh;'>
+<scroll-view scroll-y style='height:92vh'>
+  <swiper 
+      indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}" 
+      interval="{{interval}}" 
+      duration="{{duration}}"
+      >
+        <block wx:for="{{imgUrls}}" wx:key='id'>
+          <swiper-item>
+            <image src='{{item}}' style='height:60vh;' />
+          </swiper-item>
+        </block>
+  </swiper>
+  <view class='title'>
+   {{title}}
+    <view class='spec'>
+      {{spec}}
+    </view>
+  </view>
+  <view class='price'>
+  <text>￥{{price}}</text>
+  
+  </view>
+  <view class='freight'>
+    <view class='left'>
+    运费:{{yunfei}}
+    </view>
+    <view class='right'>
+    销量：{{sale}}
+    </view>
+   </view> 
+   <view class='choice' bindtap='specFun'>
+      规格：{{choose}}
+   </view>
+   <view class='tab'>
+    <view class='left' bindtap="tabFun" data-state="{{1}}">
+      <text class='{{tabIs?"tab-acitve":""}}'>产品详情</text>
+    </view>
+    <view class='right' bindtap="tabFun" data-state="{{2}}">
+      <text class='{{!tabIs?"tab-acitve":""}}'>售后保障</text>
+    </view>
+   </view>
+   <view class='content' wx:if="{{tabIs}}">
+        {{detail}}
+      </view>
+   <view class='content' wx:if="{{!tabIs}}">
+      {{shouhou}}
+   </view>
+</scroll-view>
+<view class='bottom'>
+<view class='icon' bindtap='goShopCar'>
+    <image src='/assets/icons/cart.png' style='width:20px;height:17px;'></image>
+    <text>购物车</text>
+    <view class='shuliang' wx:if='{{isTrue}}'>{{count}}</view>
+</view>
+<view class='btn' bindtap='specFun'>
+  加入购物车
+</view>
+<view class='btn' style='background: #FE4543;' bindtap='specFun'>
+  立即购买
+</view>
+</view>
+<view class='popup' wx:if="{{specIs}}">
+    <view class='title'>
+      <view class='img'>
+        <image src=''></image>
+      </view>
+      <view class='text'>
+        <text>{{title}}</text>
+        <view>￥{{price}}</view>
+      </view>
+      <view class='icon' bindtap='specFun'>
+        <image src="{{img}}"></image>
+      </view>
+    </view>
+  <scroll-view scroll-y class='content'>
+      <view class='item'>
+        <text style='padding-top:10px;'>款式:</text>
+        <view class='list'>
+          <view class='active'>400g</view>
+          <view>500g</view>
+          <view>600g</view>
+          <view>1000g</view>
+        </view>
+      </view>
+      <view class='item'>
+        <text>搭配套餐:</text>
+        <view class='list'>
+          <view>400g+酸奶</view>
+          <view>500g+酸奶</view>
+          <view>600g+酸奶</view>
+          <view>1000g+酸奶</view>
+          <view>400g+酸奶250g</view>
+          <view>500g+酸奶300g</view>
+          <view>600g+酸奶250g</view>
+          <view>1000g+酸奶300g</view>
+        </view>
+      </view>
+  </scroll-view>
+  <view class='btn' bindtap='addCart' data-id="{{id}}" data-img_url="{{img}}" data-title="{{title}}" data-new_price="{{price}}" data-num="{{num}}" data-spec='{{spec}}'>
+  下一步
+  </view>
+</view>
+</view>
+
+

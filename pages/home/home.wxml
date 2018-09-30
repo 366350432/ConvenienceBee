@@ -1,0 +1,108 @@
+<!--pages/home/home.wxml-->
+<view class='home-search'>
+  <view class='home-view'>
+    <view class='home-position' bindtap='goaddress'>
+      <image src='/assets/icons/position.png'></image>
+      <text class='songzhi'>配送至:</text>
+      <text class='ell'>{{dizhi}}</text>
+      <image src='/assets/icons/down.png'></image>
+    </view>
+    <view class='home-input' bindtap='goSearch'>  
+      <image src='/assets/icons/search.png'></image>
+    </view>
+  </view>
+</view>
+<view class="slider">
+  <swiper autoplay interval="3500" indicator-dots="{{true}}">
+     <swiper-item wx:for="{{imageList}}" wx:key="id">
+       <!--图片 设置宽高 等比例缩放-->
+       <image src="{{item.img_url}}"
+        mode="aspectFit" bindtap='goDetails' lazy-load/>
+     </swiper-item>
+  </swiper>
+</view>
+<view class='banner'>
+  <view class='banner-first'>
+    <view class='left-banner'>
+      <navigator url='/pages/details/details'>
+        <view class='qianggou'>
+          <view class='kaiqiang'>每天14点准时开抢</view>
+          <view class='gouzhong'>抢购中</view>
+        </view>
+        <view class='qianggou-img'>
+        <image src='/assets/icons/youzi.jpg'></image> 
+        </view>  
+        <view class='qianggou-title'>
+          <text>西非红西柚400-480g/粒</text>
+        </view>
+        <view class='qianggou-price'>
+          <text>¥0.99</text>
+          <text>¥12</text>
+        </view>
+      </navigator>   
+    </view> 
+  </view>
+  <view class='three-list'>
+      <view class='list-top'>
+        <navigator url='/pages/details/details'><image src='/assets/banner/miyou.png'></image></navigator>
+      </view>
+      <view class='list-bottom'>
+        <image src='/assets/banner/bingshuang.png' bindtap='goDetails'></image>
+        <image src='/assets/banner/jiayouya.png' bindtap='goDetails'></image>
+      </view>
+  </view>
+</view>
+<view class='tejia'>
+  <image src='/assets/icons/diandian.png'></image>
+  <text>本周上新</text>
+  <image src='/assets/icons/diandian.png'></image>
+</view>
+<view class='tejia-list'>
+  <view class='teJia'>
+    <view class='teJia-detail' wx:for='{{newList}}' wx:key='id'>
+      <view bindtap='goDetails' data-img_url='{{item.img_url}}' data-spec='{{item.spec}}'data-title='{{item.title}}' data-new_price='{{item.new_price}}' data-old_price='{{item.old_price}}' data-id='{{item.id}}'>
+      <view class='detail-img'>
+          <image src='{{item.img_url}}' class='detail-image'></image>
+        </view> 
+        <view class='detail-title'>
+          <text>{{item.title}}</text>
+        </view> 
+        <view class='detail-pro'>
+          <text>{{item.spec}}</text>
+        </view>
+      </view>
+      <view class='detail-prices'>
+        <text>¥{{item.new_price}}</text>
+        <text>¥{{item.old_price}}</text>
+        <image src='/assets/icons/cart-small.png' class='price-image' bindtap='addCart' data-id="{{item.id}}" data-img_url="{{item.img_url}}" data-title="{{item.title}}" data-new_price="{{item.new_price}}" data-old_price='{{item.old_price}}' data-num="{{item.num}}" data-spec='{{item.spec}}'></image>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='rexiao'>
+  <image src='/assets/icons/diandian.png'></image>
+  <text>超市热销</text>
+  <image src='/assets/icons/diandian.png'></image>
+</view>
+
+<view class='rexiao-list'>
+  <view class='rexiaoList'>
+    <view class='reXiao'>
+      <view class='rexiao-detail' wx:for='{{shopList}}' wx:key='id'>
+        <view bindtap='goDetails' data-img_url='{{item.img_url}}' data-spec='{{item.spec}}'data-title='{{item.title}}' data-new_price='{{item.new_price}}' data-old_price='{{item.old_price}}' data-id='{{item.id}}'>
+          <view class='rexiao-img'>
+            <image src='{{item.img_url}}' class='rexiao-image'></image>
+          </view> 
+          <view class='rexiao-title'>
+            <text>{{item.title}}</text>
+          </view> 
+        </view>
+        <view class='rexiao-prices'>
+          <text>¥{{item.new_price}}</text>
+          <text>¥{{item.old_price}}</text>
+          <image src='/assets/icons/cart-small.png' class='price-image' bindtap='addCart' data-id="{{item.id}}" data-img_url="{{item.img_url}}" data-title="{{item.title}}" data-new_price="{{item.new_price}}" data-old_price='{{item.old_price}}' data-num="{{item.num}}" data-spec='{{item.spec}}'></image>
+        </view>
+      </view>    
+    </view>
+  </view> 
+</view>

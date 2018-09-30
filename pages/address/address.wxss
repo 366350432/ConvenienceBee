@@ -1,0 +1,43 @@
+/* pages/address/address.wxss */
+page{
+  background: #EFEFEF;
+}
+.address{
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  padding: 30rpx;
+  font-size: 14px;
+}
+.address-list view:first-child{
+  margin-bottom: 10rpx;
+}
+.address-list view:first-child text{
+  padding:0 10rpx 0 0;
+}
+.address-list view:last-child text{
+  padding:0 8rpx 0 0;
+  color:gray;
+}
+.update{
+  border-left: 1px solid #f1f1f1;
+}
+.update image{
+  width:50rpx;
+  height:50rpx;
+  margin-left: 40rpx;
+  margin-top: 16rpx;
+}
+.address-add{
+  position: fixed;
+  bottom:0;
+  left: 0;
+  width: 100%;
+}
+.address-add button{
+  background: orange;
+}
+.address-out{
+  height:91vh;
+  overflow-y: scroll;
+}

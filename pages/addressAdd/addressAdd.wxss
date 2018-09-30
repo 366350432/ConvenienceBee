@@ -1,0 +1,38 @@
+/* pages/addressAdd/addressAdd.wxss */
+page{
+  background:#EFEFEF;
+  font-size: 14px;
+}
+.add-person,.add-tel,.add-city,.add-area,.add-detail{
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  border-bottom: 1rpx solid #f1f1f1;
+  margin-left:10rpx;
+  height: 70rpx;
+  padding: 10rpx 0;
+}
+.add-person input{
+  width:370rpx;
+}
+.add-person text,.add-tel text,.add-city text,.add-area text,.add-detail text{
+  width:135rpx;
+  margin-right:20rpx;
+}
+.add{
+  background: #fff;
+}
+.add-detail input{
+  width:80%;
+}
+radio-group radio{
+  margin-right: 10rpx;
+  zoom: 84%;
+}
+button{
+  margin-top:30rpx;
+  background: orange;
+}
+.add-area input{
+  width: 80%;
+}

@@ -1,0 +1,20 @@
+<!--pages/kefu/kefu.wxml-->
+<view class='divider'></view>
+<view class='question cell'>
+  <view bindtap='goQuestion' class='question-top'>
+    <image src='/assets/icons/wenti.png'></image>
+    <view class='question-text'>
+      <text>常见问题</text>
+      <text>配送时间、优惠券和退款流程等</text>
+    </view> 
+  </view>
+</view>
+<view class='phone cell'>
+  <view bindtap='phoneCall' class='question-bottom'>
+    <image src='/assets/icons/dianhua.png'></image>
+    <view class='phone-text'>
+      <text>客服电话</text>
+      <text>15546522025</text>
+    </view> 
+  </view>
+</view>

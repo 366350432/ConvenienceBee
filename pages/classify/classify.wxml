@@ -1,0 +1,36 @@
+<view class="main">
+    <view class="categroy-left">
+        <view wx:for="{{category}}" wx:key="index" data-id="{{item.id}}" data-index="{{index}}"
+            bindtap="switchTab"
+            class="cate-list {{curIndex === index?'on':''}}">{{item.name}}
+        </view>
+    </view>
+    <scroll-view class="categroy-right" scroll-y="{{isScroll}}" scroll-into-view="{{toView}}" scroll-with-animation="true">
+         <block wx:for="{{details}}" wx:for-index wx:key="idx">
+            <view id="{{item.id}}" class="cate-box">
+                <view class="cate-banner">
+                    <image src="{{item.banner}}"></image>
+                </view>
+                <view class="cate-title">
+                    <text>{{item.cate}}</text>
+                </view>
+                <view class="product">
+                    <view class="product-list" wx:for="{{item.detail}}" wx:key="index" wx:for-item="val">
+                        <view class="list-detail">
+                            <image src="{{val.img_url}}" bindtap='goDetails'></image>
+                            <view class="classname"bindtap='goDetails'>
+                              <text class='classname-title'>{{val.name}}</text>
+                              <view class='detail-price'>
+                               <text class='price-new'>¥{{val.new_price}}</text>
+                               <text class='price-old'>¥{{val.old_price}}</text>
+                                <image src='/assets/icons/cart-small.png' bindtap='addCart' data-img_url='{{val.img_url}}' data-title='{{val.title}}' data-new_price='{{val.new_price}}' data-old_price='{{val.old_price}}' data-spec='{{val.spec}}' data-thumb='{{val.thumb}}' data-name='{{val.name}}' data-id='{{val.id}}' data-num='{{val.num}}'></image>
+                              </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block> 
+       
+    </scroll-view>
+</view>

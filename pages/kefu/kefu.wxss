@@ -1,0 +1,41 @@
+/* pages/kefu/kefu.wxss */
+image{
+  width:80rpx;
+  height:80rpx;
+  margin-left:20rpx;
+}
+.question-top,.question-bottom{
+  display: flex;
+  justify-content: float;
+}
+.question-text,.phone-text{
+  display: flex;
+  flex-direction: column;
+  margin-left:20rpx;
+}
+.question-top{
+  border-bottom: 1rpx solid #f1f1f1;
+  padding-bottom: 20rpx;
+  padding-top:20rpx;
+}
+.question-text text:first-child{
+  margin-bottom: 20rpx;
+}
+.question-text text:last-child{
+  font-size:14px;
+  color:#ddd;
+}
+.phone-text text:first-child{
+  margin-bottom: 20rpx;
+}
+.phone-text text:last-child{
+  font-size:14px;
+  color:rgb(48, 138, 211);
+}
+page{
+  background: #f1f1f1;
+}
+.question-bottom{
+  padding-bottom: 20rpx;
+  padding-top:20rpx;
+}

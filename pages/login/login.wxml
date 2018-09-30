@@ -1,0 +1,14 @@
+<!--pages/login/login.wxml-->
+<view class='reg'>
+  <form bindsubmit='regPhone'>
+    <input type='number' placeholder='请输入手机号' class='cell-item' name='tel'></input>
+    <view class='reg-flex cell-item'>
+      <input type='number' placeholder='请输入验证码' name='yanzheng'></input>
+      <text wx:if='{{reg}}' class='reg-get' bindtap='getCode'>{{getYanzheng}}</text>
+      <text wx:else class='reg-send'>已发送({{count}})</text>
+    </view>
+    <view class='login-btn'>
+      <button form-type='submit'>登录</button>
+    </view>
+  </form>
+</view>

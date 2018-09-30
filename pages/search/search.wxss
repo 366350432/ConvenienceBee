@@ -1,0 +1,46 @@
+/* pages/search/search.wxss */
+page{
+  background: #f1f1f1;
+}
+.search{
+  display: flex;
+  background: #fff;
+  justify-content: space-around;
+  margin-bottom: 10rpx;
+}
+.search form{
+  width:80%;
+  background: #f1f1f1;
+  margin: 20rpx 0;
+  border-radius: 10rpx;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.4
+}
+.search input{
+  padding:6rpx;
+}
+.search .quxiao{
+  color:orange;
+  font-size: 14px;
+  margin-top:30rpx;
+  margin-right: 10rpx;
+}
+.remen-list{
+  background: #fff;
+  font-size: 15px;
+  margin-top: 16rpx;
+}
+.first-list,.second-list{
+  display: flex;
+  justify-content: space-around;
+  line-height: 80rpx;
+
+}
+.first-list{
+  border-bottom: 1px solid #ddd;
+}
+.remen{
+  font-size: 14px;
+  margin:50rpx 0 0 30rpx;
+}

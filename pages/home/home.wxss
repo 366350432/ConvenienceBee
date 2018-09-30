@@ -1,0 +1,257 @@
+/* pages/home/home.wxss */
+page{
+  background-color: #fff;
+}
+.slider,
+.slider swiper{
+   width:100%;
+   height:400rpx; /*图片测量出结果*/
+   margin:0 auto;
+}
+.slider swiper-item{
+  width:100%;
+  text-align: center;
+}
+.slider image{
+  border-radius: 20rpx;
+  width: 92%;
+}
+.home-search{
+  height:300rpx;
+  background-color: #FADD42;
+}
+.home-search .home-view{
+  display: flex;
+  justify-content: space-between;
+  width:92%;
+  margin: 0 auto;
+}
+.home-search .home-input,.home-search .home-position{
+  width:32rpx;
+  height:32rpx;
+  display: inline-block;
+  z-index: 1001;
+}
+.home-search .home-input image,.home-search .home-position image{
+  width:32rpx;
+  height:32rpx;
+  vertical-align: middle;
+  margin-top: 4rpx;
+  margin-right: 10rpx;
+  z-index: 1000;
+}
+.home-view .home-position{
+  display: flex;
+  font-size: 14px;
+  width:60%;
+  margin-top: 15rpx;
+}
+page{
+  position: relative;
+}
+.slider{
+  position: absolute;
+  top:-10rpx;
+  left:0;
+}
+.banner{
+  height:350rpx;
+  width:92%;
+  margin: 0 auto;
+  margin-top: 140rpx;
+  display: flex;
+  justify-content: space-around
+}
+.tejia{
+  margin: 40rpx 0;
+  text-align: center;
+}
+.tejia text,.rexiao text{
+  margin: 0 20rpx;
+  font-weight: bold;
+}
+.tejia image,.rexiao image{
+  width:40rpx;
+  height:40rpx;
+}
+.tejia-list{
+  width:92%;
+  height: 400rpx;
+  margin: 0 auto;
+  overflow-x: scroll;
+}
+.rexiao{
+  margin:30rpx 0;
+  text-align: center;
+  background: #fff;
+  line-height: 2;
+  color:pink;
+}
+.rexiao-list{
+  width: 92%;
+  height: 1100rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.banner-first{
+  font-size:12px;
+  display: flex;
+  justify-content: space-between
+}
+.banner-first image{
+  width:120rpx;
+  height:120rpx;
+}
+.qianggou{
+  display: flex;
+  color:#fff;
+}
+.qianggou .kaiqiang{
+  background: linear-gradient(to right, pink, red);
+  padding:0 10rpx;
+}
+.qianggou .gouzhong{
+  background:#000;
+  padding:0 20rpx;
+}
+.banner-first{
+  box-shadow:0 0  10rpx #0101019c;
+  width: 49%;
+  height:330rpx;
+  border-radius: 8rpx;
+}
+.qianggou-title{
+  margin-bottom: 20rpx;
+  margin-left:10rpx;
+  font-size:13px;
+}
+.qianggou-img{
+  text-align: center;
+  margin: 30rpx 0;
+}
+.qianggou-price{
+  margin-left:10rpx;
+  margin-bottom: 10rpx;
+  padding:5rpx;
+}
+.qianggou-price text:first-child{
+  color:red;
+  font-size:13px;
+}
+.qianggou-price text:last-child{
+  color:#ddd;
+  text-decoration: line-through;
+  margin-left:10rpx;
+}
+.three-list{
+  width:46%;
+  height:330rpx;
+  margin-left: 25rpx;
+}
+.list-top  image{
+  width:100%;
+  height:160rpx;
+  border-radius: 8rpx;
+}
+.list-bottom{
+  display: flex;
+  justify-content: space-between;
+}
+.list-bottom image{
+  width:49%;
+  height:160rpx;
+  border-radius: 8rpx;
+}
+.banner-second{
+  display: flex;
+}
+.detail-image{
+  width: 160rpx;
+  height:160rpx;
+  margin-bottom: 20rpx;
+
+}
+.price-image{
+  width:40rpx;
+  height: 40rpx;
+  margin-left:60rpx;
+}
+.teJia{
+  font-size: 12px;
+  display: flex;
+  width:875rpx;
+}
+.teJia-detail{
+  width:45%;
+  margin-right:20rpx;
+}
+.detail-img{
+  text-align: center;
+}
+.detail-title{
+  margin-bottom: 30rpx;
+}
+.detail-pro{
+  margin-bottom:30rpx
+}
+.detail-prices text:first-child{
+  color:red;
+  font-size: 13px;
+}
+.detail-prices text:nth-child(2){
+  color:#ddd;
+  text-decoration: line-through;
+  margin-left:15rpx;
+}
+.rexiao-list .rexiaoList .teJia .teJia-detail{
+  width:100%;
+}
+.rexiao-image{
+  width:200rpx;
+  height:160rpx;
+  margin-top:30rpx;
+}
+.rexiao-img{
+  text-align: center;
+  margin-bottom:20rpx;
+}
+.rexiao-detail{
+  width:47%;
+  font-size:12px;
+  margin-left: 20rpx;
+  background: #fff;
+  margin-top: 20rpx;
+  border-radius: 10rpx;
+}
+.reXiao{
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.rexiao-title{
+  margin-bottom: 20rpx;
+}
+.rexiao-prices{
+  margin-bottom:30rpx;
+}
+.rexiao-prices text:first-child{
+  color:red;
+  font-size:13px;
+}
+.rexiao-prices text:nth-child(2){
+  color:#ddd;
+  text-decoration: line-through;
+  margin-left:20rpx;
+}
+.rexiao-detail .rexiao-prices .price-image{
+  margin-left:80rpx;
+}
+.home-position .songzhi{
+  width:36%;
+}
+.ell{
+  height:40rpx;
+}

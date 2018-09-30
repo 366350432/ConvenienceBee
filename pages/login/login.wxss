@@ -1,0 +1,28 @@
+/* pages/login/login.wxss */
+.reg{
+  font-size: 14px;
+  margin-top:60rpx;
+}
+.reg-flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+.reg-flex input{
+  width:76%;
+  border-right: 1rpx solid #f1f1f1;
+}
+.reg-send{
+  color:#808080;
+}
+.reg-get{
+  color:#000;
+}
+.login-btn{
+  margin:0 auto;
+  margin-top:150rpx;
+}
+.login-btn button{
+  font-size: 14px;
+  width:90%;
+}

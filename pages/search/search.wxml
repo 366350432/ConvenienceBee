@@ -1,0 +1,20 @@
+<!--pages/search/search.wxml-->
+<view class='search'>
+  <form>
+    <input type='text' placeholder='请输入商品名称'></input>
+  </form>
+  <text class='quxiao'>取消</text>
+</view>
+<text class='remen'>热门搜索</text>
+<view class='remen-list'>
+  <view class='first-list'>
+    <text>橘子</text>
+    <text>飘香</text>
+    <text>柚子</text>
+  </view>
+  <view class='second-list'>
+    <text>鸡蛋</text>
+    <text>蜜梨</text>
+    <text>酸奶</text>
+  </view>
+</view>

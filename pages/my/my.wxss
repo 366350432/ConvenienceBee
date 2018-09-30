@@ -1,0 +1,59 @@
+/* pages/my/my.wxss */
+.order{
+  display: flex;
+  justify-content:space-between;
+  line-height: 2;
+}
+.order>text:last-child{
+  font-size: 14px;
+}
+.status image{
+  width:60rpx;
+  height:60rpx;
+  margin-bottom: 10rpx;
+}
+.status{
+  display: flex;
+  justify-content: space-around;
+  margin-top:20rpx;
+  margin-bottom: 20rpx;
+}
+.status view{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.my-detail image{
+  width:40rpx;
+  height:40rpx;
+  vertical-align: bottom;
+  margin-right: 20rpx;
+}
+.avatar{
+    background-color: rgb(243, 196, 41);
+    height:360rpx;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+}
+.avatar text{
+  position: absolute;
+  top:260rpx;
+  color:#fff;
+  font-weight: bold;
+  font-size:14px;
+}
+.avatar image{
+    width:160rpx;
+    height: 160rpx;   
+    margin-top: 70rpx;
+}
+text{
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.bkg{
+  height:220rpx;
+  background:#f1f1f1;
+}
